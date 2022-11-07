@@ -5,7 +5,6 @@
  */
 
 import Operation from "../Operation.mjs";
-import OperationError from "../errors/OperationError.mjs";
 
 /**
  * Convert to sarcasm operation
@@ -33,16 +32,15 @@ class ConvertToSarcasm extends Operation {
      * @returns {string}
      */
     run(input, args) {
-	const data = input;
-	var inputArray = Array.from(input);
-	inputArray.forEach(function callback(v, i) {
-	    if (i%2) {
-	        inputArray[i] = v.toUpperCase();
-	    } else {
-                inputArray[i] = v.toLowerCase();
-	    }
+    let inputArray = Array.from(input);
+    inputArray.forEach(function callback(v, i) {
+        if (i%2) {
+            inputArray[i] = v.toUpperCase();
+        } else {
+            inputArray[i] = v.toLowerCase();
+        }
         });
-        return inputArray.join('');
+        return inputArray.join("");
     }
 
 }
