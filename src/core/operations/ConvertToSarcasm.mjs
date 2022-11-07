@@ -32,13 +32,13 @@ class ConvertToSarcasm extends Operation {
      * @returns {string}
      */
     run(input, args) {
-    let inputArray = Array.from(input);
-    inputArray.forEach(function callback(v, i) {
-        if (i%2) {
-            inputArray[i] = v.toUpperCase();
-        } else {
-            inputArray[i] = v.toLowerCase();
-        }
+        const inputArray = Array.from(input);
+        inputArray.forEach(function callback(v, i) {
+            if (i%2) {
+                inputArray[i] = v.toUpperCase();
+            } else {
+                inputArray[i] = v.toLowerCase();
+            }
         });
         return inputArray.join("");
     }
